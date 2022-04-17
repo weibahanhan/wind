@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Winning planning Ex-In factories 
-#                      ----Han Wei April 2022
+
 # 
 
 # In[ ]:
@@ -32,13 +31,13 @@
 
 
 # In[ ]:
-
+import streamlit as st
 
 
 
 
 # In[4]:
-
+st.title('DTR & Gen plants supply chain planning issue dignostic analytical report')
 
 import plotly.graph_objects as go
 
