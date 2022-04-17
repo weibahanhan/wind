@@ -48,7 +48,7 @@ import plotly.express as px
 import matplotlib.pyplot as plt
 
 #filepath = r'C:\\...\\Worksheet.xlsx'
-df = pd.read_excel('C:\\Users\donal\stick-DT\dt.xlsx')
+df = pd.read_excel('https://github.com/weibahanhan/wind/blob/main/dt.xlsx')
 
 
 df.head(2)
