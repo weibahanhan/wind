@@ -45,7 +45,7 @@ import plotly.graph_objects as go
 import pandas as pd
 from datetime import datetime
 import plotly.express as px
-import matplotlib.pyplot as plt
+
 
 #filepath = r'C:\\...\\Worksheet.xlsx'
 df = pd.read_excel('https://github.com/weibahanhan/wind/blob/main/dt.xlsx')
