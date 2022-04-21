@@ -21,7 +21,7 @@ import streamlit as st
 
 
 
-st.title(' this app is for demo share only, not real time data, not for production, contact wehan@vestas.com for any questions')
+st.text(' hi,for security reason, this app is for demo share only,not realtime data,not for production, contact wehan@vestas.com for questions')
 
 path1= 'https://raw.githubusercontent.com/weibahanhan/wind/main/29193947-701b.csv'
 
