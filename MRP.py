@@ -17,7 +17,7 @@ import plotly.graph_objects as go
 import pandas as pd
 from datetime import datetime
 import plotly.express as px
-import matplotlib.pyplot as plt
+
 import streamlit as st
 path1= 'https://raw.githubusercontent.com/weibahanhan/wind/main/29193947-701b.csv'
 
