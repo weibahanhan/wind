@@ -36,6 +36,13 @@ dfb=dfb.reset_index()
 dfv=dfv[['Planned dates','Rec./reqd qty']]
 dfw=dfw[['Planned dates','Rec./reqd qty']]
 
+dfb['Planned dates']=pd.to_datetime(dfb['Planned dates'])
+dfv['Planned dates']=pd.to_datetime(dfv['Planned dates'])
+dfw['Planned dates']=pd.to_datetime(dfw['Planned dates'])
+dfb=dfb.sort_values('Planned dates')
+dfv=dfv.sort_values('Planned dates')
+dfw=dfw.sort_values('Planned dates')
+
 
 # In[ ]:
 
@@ -127,7 +134,7 @@ st.plotly_chart(fig, use_container_width=True)
 # In[2]:
 
 
-get_ipython().system('jupyter nbconvert --to script MRP.ipynb')
+
 
 
 # In[ ]:
