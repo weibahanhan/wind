@@ -187,7 +187,7 @@ fig.update_layout(
 )
 
 fig.show()
-#st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig, use_container_width=True)
 
 
 # #### Business Insights: From chart we could see the requirement flow for new material(3947) is pretty correct. supply factory see 1 day earlier due to 1 day transportation leadtime set up. Reminder: There is no GR process date set up this moment.
