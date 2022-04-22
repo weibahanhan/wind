@@ -5,6 +5,13 @@
 
 
 
+
+
+# ## Demand flow analysis from PTR factories to Gen-New material (3947)
+
+# In[2]:
+
+
 #import libary 
 import plotly.graph_objects as go
 import pandas as pd
@@ -13,19 +20,77 @@ import plotly.express as px
 
 import streamlit as st
 
+st.title(' this app is for demo share only, not real time data, not for production, contact wehan@vestas.com for any questions')
 
 
-st.text(' hi,for security reason, this app is for demo share only,not realtime data,not for production, contact wehan@vestas.com for questions')
+# In[55]:
 
-path1= 'https://raw.githubusercontent.com/weibahanhan/wind/main/29193947-701b.csv'
 
-path2= 'https://raw.githubusercontent.com/weibahanhan/wind/main/29193947-701v.csv'
+@st.experimental_memo
+def load_data():
+    
+    df = pd.read_csv('https://raw.githubusercontent.com/weibahanhan/wind/main/29193947-701b.csv')
+    
+    return df
 
-path3= 'https://raw.githubusercontent.com/weibahanhan/wind/main/29193947-701w.csv'
 
-dfb=pd.read_csv(path1)
-dfv=pd.read_csv(path2)
-dfw=pd.read_csv(path3)
+dfb = load_data()
+
+
+# In[56]:
+
+
+@st.experimental_memo
+def load_data():
+    
+    df = pd.read_csv('https://raw.githubusercontent.com/weibahanhan/wind/main/29193947-701v.csv')
+    
+    return df
+
+
+dfv = load_data()
+
+
+# In[57]:
+
+
+@st.experimental_memo
+def load_data():
+    
+    df = pd.read_csv('https://raw.githubusercontent.com/weibahanhan/wind/main/29193947-701w.csv')
+    
+    return df
+
+
+dfw = load_data()
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[58]:
+
+
+
+
+
+
+
 
 dfb=dfb[['Planned dates','Rec./reqd qty']]
 dfb['Rec./reqd qty']=dfb['Rec./reqd qty']*(-1)
@@ -33,6 +98,10 @@ dfb=dfb.groupby('Planned dates').sum()
 dfb=dfb.reset_index()
 dfv=dfv[['Planned dates','Rec./reqd qty']]
 dfw=dfw[['Planned dates','Rec./reqd qty']]
+
+
+# In[59]:
+
 
 dfb['Planned dates']=pd.to_datetime(dfb['Planned dates'])
 dfv['Planned dates']=pd.to_datetime(dfv['Planned dates'])
@@ -48,7 +117,7 @@ dfw=dfw.sort_values('Planned dates')
 
 
 
-# In[12]:
+# In[60]:
 
 
 ## Plot stacked bar and line combined chart to show if supply factory meet requirement
@@ -118,4 +187,37 @@ fig.update_layout(
 )
 
 fig.show()
-st.plotly_chart(fig, use_container_width=True)
+#st.plotly_chart(fig, use_container_width=True)
+
+
+# #### Business Insights: From chart we could see the requirement flow for new material(3947) is pretty correct. supply factory see 1 day earlier due to 1 day transportation leadtime set up. Reminder: There is no GR process date set up this moment.
+
+# In[ ]:
+
+
+
+
+
+# In[61]:
+
+
+#!jupyter nbconvert --to script MRP.ipynb
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
