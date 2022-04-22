@@ -20,7 +20,7 @@ import plotly.express as px
 
 import streamlit as st
 
-st.text(' this app is for demo share only, not real time data, not for production, contact wehan@vestas.com for any questions')
+st.title(' this app is for demo share only, not real time data, not for production, contact wehan@vestas.com for any questions')
 
 
 # In[55]:
@@ -124,7 +124,7 @@ dfw=dfw.sort_values('Planned dates')
 fig = go.Figure()
 
 fig = px.line(dfb, x="Planned dates", y="Rec./reqd qty")
-
+fig.update_traces(name='701b', showlegend = True)
 
 fig.add_trace(
     go.Bar(
@@ -187,7 +187,7 @@ fig.update_layout(
 )
 
 fig.show()
-st.plotly_chart(fig, use_container_width=True)
+#st.plotly_chart(fig, use_container_width=True)
 
 
 # #### Business Insights: From chart we could see the requirement flow for new material(3947) is pretty correct. supply factory see 1 day earlier due to 1 day transportation leadtime set up. Reminder: There is no GR process date set up this moment.
@@ -198,10 +198,10 @@ st.plotly_chart(fig, use_container_width=True)
 
 
 
-# In[61]:
+# In[63]:
 
 
-#!jupyter nbconvert --to script MRP.ipynb
+get_ipython().system('jupyter nbconvert --to script MRP.ipynb')
 
 
 # In[ ]:
